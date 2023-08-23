@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: search_zip_code_development
+
+test:
+  <<: *default
+  database: search_zip_code_test
+
+production:
+  <<: *default
+  database: search_zip_code_production
+  username: search_zip_code
+  password: <%= ENV['SECRET_KEY_BASE'] %>
