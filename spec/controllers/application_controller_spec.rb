@@ -1,5 +1,4 @@
 require "rails_helper"
-require "support/spec_test_helper"
 
 RSpec.describe ApplicationController do
   it "current_user with token" do
